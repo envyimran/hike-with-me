@@ -9,4 +9,11 @@
     <string name="home">Home</string>
     <string name="chat">Chat</string>
     <string name="profile">Profile</string>
+    <string name="upload_id">Upload ID:</string>
+    <string name="enter_email_address">Enter email address</string>
+    <string name="email">Email:</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="last_name">Last Name:</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="first_name">First Name:</string>
 </resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.hikewithme.Verification"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textViewFirstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/first_name"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textViewFirstName"
+        android:layout_marginStart="16dp"
+        android:hint="@string/enter_first_name"
+        android:inputType="textPersonName"
+        android:backgroundTint="@android:color/black"
+        android:textColor="#000000"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/textViewLastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewFirstName"
+        android:text="@string/last_name"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="24dp"/>
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textViewLastName"
+        android:layout_below="@id/editTextFirstName"
+        android:layout_marginStart="16dp"
+        android:hint="@string/enter_last_name"
+        android:inputType="textPersonName"
+        android:backgroundTint="@android:color/black"
+        android:textColor="#000000"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewLastName"
+        android:text="@string/email"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textViewEmail"
+        android:layout_alignBaseline="@id/textViewEmail"
+        android:layout_marginStart="16dp"
+        android:hint="@string/enter_email_address"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@android:color/black"
+        android:textColor="#000000"
+        android:imeOptions="actionNext"/>
+
+    <TextView
+        android:id="@+id/textViewUploadID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
+        android:text="@string/upload_id"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:layout_marginTop="32dp"/>
+
+    <Button
+        android:id="@+id/btnUploadID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/textViewUploadID"
+        android:layout_below="@id/editTextEmail"
+        android:layout_marginStart="16dp"
+        android:text="Upload"
+        android:layout_marginTop="16dp"
+        android:background="#8ABE82"
+        android:textColor="#000000"/>
+
+
+    <ImageView
+        android:id="@+id/imageViewID"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/textViewUploadID"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageViewID"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:onClick="submitForm"
+        android:text="Submit"
+        android:background="#8ABE82"
+        android:textColor="#000000"/>
+
+</RelativeLayout>

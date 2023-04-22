@@ -1,6 +1,7 @@
 package com.example.android.hikewithme;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         chatButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //TODO Go to Chat Menu
+                goToChat(v);
             }
         });
         container = new LinearLayout(this);
@@ -132,6 +133,11 @@ public class MainActivity extends AppCompatActivity {
                 locationTask.addOnSuccessListener(this::findHikingTrails);
             }
         }
+    }
+
+    public void goToChat(View view) {
+        //Intent chat = new Intent(this, Verification.class);
+        //startActivity(chat);
     }
     private class PlacesAsyncTask extends AsyncTask<Location, Void, PlacesSearchResponse> {
 
