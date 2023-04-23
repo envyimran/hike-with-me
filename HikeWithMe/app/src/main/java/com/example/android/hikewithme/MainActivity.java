@@ -30,6 +30,8 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.Task;
 import com.google.android.libraries.places.api.Places;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.maps.GeoApiContext;
 import com.google.maps.NearbySearchRequest;
 import com.google.maps.PlacesApi;
@@ -44,7 +46,7 @@ import java.io.IOException;
 public class MainActivity extends AppCompatActivity {
 
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-    private static final String API_KEY = "KEY HERE";
+    private static final String API_KEY = "";
     private ScrollView scrollView;
     private LinearLayout container;
 
@@ -53,11 +55,21 @@ public class MainActivity extends AppCompatActivity {
     private String searchContent = "";
     private String selectedAddress = "";
     private Button chatButton;
+    private FirebaseAuth firebaseAuth;
+
+    private Button homeButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(MainActivity.this);
         setContentView(R.layout.activity_main);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null) {
+            Intent login = new Intent(this, LoginActivity.class);
+            startActivity(login);
+            finish();
+        }
         searchBar = findViewById(R.id.searchbar);
         searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -87,6 +99,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 goToChat(v);
+            }
+        });
+        homeButton = findViewById(R.id.button2);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseAuth.signOut();
+                Intent login = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(login);
+                finish();
             }
         });
         container = new LinearLayout(this);
@@ -136,8 +158,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToChat(View view) {
-        //Intent chat = new Intent(this, Verification.class);
-        //startActivity(chat);
+        Intent chat = new Intent(this, MapActivity.class);
+        startActivity(chat);
     }
     private class PlacesAsyncTask extends AsyncTask<Location, Void, PlacesSearchResponse> {
 
@@ -215,12 +237,14 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             selectedAddress = addressTextView.getText().toString();
-                            //TODO Open fragment
-                            Toast toast = Toast.makeText(MainActivity.this, selectedAddress, Toast.LENGTH_SHORT);
-                            toast.show();
+                            Intent data = new Intent(MainActivity.this, TrailData.class);
+                            data.putExtra("locationAddress", selectedAddress);
+                            data.putExtra("trailName", place.name);
+                            data.putExtra("lat", place.geometry.location.lat);
+                            data.putExtra("lng", place.geometry.location.lng);
+                            startActivity(data);
                         }
                     });
-
                     child.addView(ratingBar);
                     container.addView(child);
                 }

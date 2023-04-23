@@ -6,7 +6,7 @@
     <string name="welcome_to_hike_with_me">Welcome to Hike With Me!</string>
     <string name="search">Search...</string>
     <string name="explore_trails">Explore Trails</string>
-    <string name="home">Home</string>
+    <string name="home">Logout</string>
     <string name="chat">Chat</string>
     <string name="profile">Profile</string>
     <string name="upload_id">Upload ID:</string>
@@ -16,4 +16,7 @@
     <string name="last_name">Last Name:</string>
     <string name="enter_first_name">Enter first name</string>
     <string name="first_name">First Name:</string>
+    <string name="send">Send</string>
+    <string name="sendChat">SEND</string>
+    <string name="city_name">NOT FOUND</string>
 </resources>

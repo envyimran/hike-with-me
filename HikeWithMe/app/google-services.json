@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "424119175745",
+    "project_id": "hike-with-me-117f0",
+    "storage_bucket": "hike-with-me-117f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:424119175745:android:d3b896ad98d73f5973d4c0",
+        "android_client_info": {
+          "package_name": "com.example.android.hikewithme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "424119175745-us0743sfe4mog25rii8mfddfrlcr84qd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.hikewithme",
+            "certificate_hash": "3fcf757a981a939c029244f152acef4cacd0c105"
+          }
+        },
+        {
+          "client_id": "424119175745-e852c6bfbr8hv5qjbef34et78vejhf8t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQG2M3d3V1xXwgx1LBRWqJFqEKnQrWWOI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "424119175745-e852c6bfbr8hv5qjbef34et78vejhf8t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

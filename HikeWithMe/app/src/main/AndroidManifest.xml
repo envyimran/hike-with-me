@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -14,8 +17,44 @@
         android:theme="@style/Theme.HikeWithMe"
         tools:targetApi="31">
         <activity
+            android:name=".WeatherRVModel"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherRVAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Weather"
+            android:exported="false" />
+        <activity
+            android:name=".TrailData"
+            android:exported="false" />
+        <activity
+            android:name=".Review"
+            android:exported="false" />
+        <activity
+            android:name=".PreChat"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity android:name=".ChatRoomActivity" />
+        <activity
+            android:name=".ChatAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".Verification"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
